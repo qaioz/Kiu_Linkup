@@ -1,0 +1,44 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:54321/kiu_linkup
+    username: gaioz
+    password: gaomagaria
+    driver-class-name:  org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql:  true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  mail:
+    host: localhost
+    port: "1025"
+    username: gaioz
+    password: gaomagaria
+    properties:
+      mail:
+        smtp:
+          trust: "*"
+        auth: true
+        starttls:
+          enable: true
+        connectiontimeout: 5000
+        timeout: 3000
+        writetimeout: 5000
+
+
+application:
+  security:
+    jwt:
+        secret-key: "QJQ9nATEJAJsDeULdxny7ijzuOanFn0Q"
+        expiration: 12345
+
+  email:
+    activation-code-length: 6
+  mailing:
+    frontend:
+      activation-url: "http://localhost:3000/activate"
+server:
+  port: 8088

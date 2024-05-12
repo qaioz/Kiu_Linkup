@@ -1,0 +1,31 @@
+services:
+  postgres:
+    container_name: postgres-database
+    image: postgres
+    environment:
+      POSTGRES_USER: gaioz
+      POSTGRES_PASSWORD: gaomagaria
+      PGDATA: /var/lib/postgresql/data
+      POSTGRES_DB: kiu_linkup
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - 54321:5432
+    networks:
+      - kiu-linkup
+    restart: unless-stopped
+  mail-dev:
+    container_name: mail-dev-bsn
+    image: maildev/maildev
+    ports:
+      - 1080:1080
+      - 1025:1025
+networks:
+  kiu-linkup:
+    driver: bridge
+
+volumes:
+  postgres:
+    driver: local
+
+

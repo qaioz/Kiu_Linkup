@@ -1,0 +1,20 @@
+spring:
+  profiles:
+    active: dev
+  servlet:
+    multipart:
+       max-file-size: 50MB
+
+  thymeleaf:
+    prefix: classpath:/templates/  # Path prefix for Thymeleaf templates
+    suffix: .html                   # Template file suffix
+
+
+springdoc:
+  default-produces-media-type: application/json
+
+
+server:
+  servlet:
+    context-path: /api/v1/
+
